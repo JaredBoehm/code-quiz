@@ -4,24 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="./assets/js/data.js"></script>
+    <script src="./assets/js/main.js" defer></script>
     <title>Quiz</title>
 </head>
 <body>
+
     <header>
-        <a href="./high-scores/index.html">View High Scores</a>
+        <a href="#high-scores-page" id="high-scores-link">View High Scores</a>
         <p id="timer">Time: 0</p>
     </header>
+
     <main>
+
         <section id="start-page">
             <h1>Coding Quiz Challenge</h1>
             <p>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!</p>
             <button id="start-button">Start Quiz</button>
         </section>
+
         <section id="question-page" class="hidden">
             <h1 id="question"></h1>
             <ol id="choices"></ol>
-            <p id="feedback" class="hidden"></p>
+            <p id="feedback" class="hidden-occupy-space"></p>
         </section>
+
+        <section id="submit-score-page" class="hidden">
+            <h1>All done!</h1>
+            <p id="final-score"></p>
+            <label for="initials">Enter initials:</label>
+            <input type="text" name="initials" id="initials-input">
+            <button id="submit-button">Submit</button>
+        </section>
+
+        <section id="high-scores-page" class="hidden">
+            <h1>High Scores</h1>
+            <ol id="high-scores"></ol>
+            <button id="go-back-button">Go Back</button>
+            <button id="clear-scores-button">Clear High Scores</button>
+        </section>
+
     </main>
+
 </body>
 </html>
