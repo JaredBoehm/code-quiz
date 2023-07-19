@@ -14,6 +14,10 @@
     visibility: hidden;
 }
 
+.hover-pointer:hover { 
+    cursor: pointer;
+}
+
 /* End Global Styles */
 
 body {
@@ -27,7 +31,7 @@ header {
     padding: 1rem;
 }
 
-header a { /* View High Scores */ 
+header span { /* View High Scores */ 
     color: #bd60e7;
     text-decoration: none; /* hide underline */
 }
@@ -74,11 +78,10 @@ li { /* answer choices and buttons share styling */
 button:hover,
 li:hover {
     background-color: #bd60e7;
-    cursor: pointer;
 }
 
 #initials-input,
-#high-scores li {
+#high-scores li { /* override some of the styling for the initials input and the high-score tabs */
     background-color: #ddd;
     color: #000;
 }
@@ -87,7 +90,7 @@ li:hover {
     margin-top: 0.25em;
 }
 
-#feedback {
+#feedback { /* the wrong/correct that pops up after the user answers a question */
     border-top: 1px solid #666;
     color: #666;
     font-size: 1.25rem;
