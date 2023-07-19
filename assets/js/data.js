@@ -1,5 +1,5 @@
 // questions array, contains object of each question, with the question (string) and answer (object) with answer choices (array of strings) and the correct answer (string)
-let questions = [
+const questionsRootArray = [
     { 
         question: 'Commonly used data types DO NOT include:', 
         answer: {
@@ -36,3 +36,11 @@ let questions = [
         },
     },
 ];
+
+function newQuestionsArray() {
+    let questionsArray = JSON.parse(JSON.stringify(questionsRootArray)); // my current understanding:
+                                                                         // don't modify the original questions array, (newArray = questionsRootArray) will assign newArray to a value of the memory reference for questionsRootArray
+                                                                         // so newArray[0] would === a reference to the same location in memory as questionsRootArray[0], so newArray[0] = 5 means questionsRootArray[0] is now === 5
+                                                                         // (call by sharing, pass by copy of reference, call by value, or whatever), more here: https://developer.mozilla.org/en-US/docs/Glossary/Deep_copy
+    return questionsArray;
+}

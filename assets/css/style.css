@@ -1,4 +1,5 @@
 /* Global Styles */
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -8,6 +9,11 @@
 .hidden {
     display: none;
 }
+
+.hidden-occupy-space {
+    visibility: hidden;
+}
+
 /* End Global Styles */
 
 body {
@@ -17,43 +23,73 @@ body {
 
 header {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* throw the elements to opposite ends of the container, View High Scores <----------------> Time: 0 */
     padding: 1rem;
 }
 
-header a {
+header a { /* View High Scores */ 
     color: #bd60e7;
-    text-decoration: none;
+    text-decoration: none; /* hide underline */
 }
 
-main {
+main { /* holds all -page sections */
     align-items: center;
     display: flex;
-    height: 80%;
+    height: 80%; /* this plays well with the header's height so that scrolling is only needed on very small vertical resolutions */
     justify-content: center;
+}
+
+section { /* -page sections */
+    max-width: 55ch;
+    margin: 20%; /* this keeps small horizontal resolutions looking nice, larger resolutions will hit the max-width */
+}
+
+section * { /* All elements in a -page section */
+    margin-top: 0.5rem;
+}
+
+#start-page {
     text-align: center;
 }
 
-section {
-    width: 80%;
+ol { /* answer choice list */
+    list-style-position: inside; /* guarantees decimal bullets are visible, they are temperamental with the current styling */
 }
 
-section * {
-    margin: 1rem;
+li {
+    width: 25ch; /* keeps the width of all the answer choices uniform */
 }
 
 button, 
-li {
+input,
+li { /* answer choices and buttons share styling */
     background-color: #351c75;
     border: none;
     border-radius: 0.375em;
     color: #fff;
     font-size: 1rem;
-    padding: 0.5em 1em;
+    padding: 1em 1.5em;
 }
 
 button:hover,
 li:hover {
     background-color: #bd60e7;
     cursor: pointer;
+}
+
+#initials-input,
+#high-scores li {
+    background-color: #ddd;
+    color: #000;
+}
+
+#high-scores li {
+    margin-top: 0.25em;
+}
+
+#feedback {
+    border-top: 1px solid #666;
+    color: #666;
+    font-size: 1.25rem;
+    padding-top: 0.5em;
 }
