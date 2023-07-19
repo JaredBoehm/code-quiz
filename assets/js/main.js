@@ -103,6 +103,8 @@ function displayQuestion() {
     // display the answer choices
     currentQuestion.answer.choices.forEach(function(choice) {
         let e = document.createElement('li');
+        e.setAttribute('class', 'hover-pointer');
+        e.setAttribute('tabindex', '0'); /* tab accessibility */
         e.textContent = choice;
         choicesElement.appendChild(e);
     }); 
