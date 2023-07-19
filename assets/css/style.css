@@ -1,4 +1,5 @@
 /* Global Styles */
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -12,6 +13,7 @@
 .hidden-occupy-space {
     visibility: hidden;
 }
+
 /* End Global Styles */
 
 body {
@@ -59,6 +61,7 @@ li {
 }
 
 button, 
+input,
 li { /* answer choices and buttons share styling */
     background-color: #351c75;
     border: none;
@@ -74,4 +77,19 @@ li:hover {
     cursor: pointer;
 }
 
-/* TODO: style the initials input, style the high score li's, style the feedback text */
+#initials-input,
+#high-scores li {
+    background-color: #ddd;
+    color: #000;
+}
+
+#high-scores li {
+    margin-top: 0.25em;
+}
+
+#feedback {
+    border-top: 1px solid #666;
+    color: #666;
+    font-size: 1.25rem;
+    padding-top: 0.5em;
+}

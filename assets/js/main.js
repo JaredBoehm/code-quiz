@@ -18,7 +18,7 @@ let timerElement = document.getElementById('timer'); // p, in header
 let questionPageElement = document.getElementById('question-page'); // container for question and answer choices
 let questionElement = document.getElementById('question'); // h1
 let choicesElement = document.getElementById('choices'); // ol
-let feedbackElement = document.getElementById('feedback'); // p, code will add a <hr> above
+let feedbackElement = document.getElementById('feedback'); // p
 
 // submit scores
 let submitScorePageElement = document.getElementById('submit-score-page'); // container for submit score form
@@ -113,7 +113,7 @@ function displayFeedback(feedback) {
     // show feedback element
     feedbackElement.removeAttribute('class', 'hidden-occupy-space');
     // display feedback string
-    feedbackElement.innerHTML = '<hr>' + feedback;
+    feedbackElement.innerHTML = feedback;
     // hide feedback after 1 second
     setTimeout(function() {
         feedbackElement.setAttribute('class', 'hidden-occupy-space');
@@ -190,6 +190,9 @@ choicesElement.addEventListener('click', function(event) {
 // save high score to local storage when user clicks on submit button
 submitButtonElement.addEventListener('click', function() {
     let initials = initialsInputElement.value;
+    if (initials === '') {
+        initials = 'Anon';
+    };
     let highScore = {initials: initials, score: score};
     highScores.push(highScore);
     localStorage.setItem('highScores', JSON.stringify(highScores));
